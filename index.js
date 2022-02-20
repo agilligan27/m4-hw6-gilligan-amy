@@ -1,11 +1,11 @@
 // This function gets user input and creates a new pizza order object
 // You only need to add code to this function
 function getPizzaOrder() {
-  var extraCheeseUpcharge = 1.5
-  var thickCrustUpcharge = 2
-  var deliveryFee = 3.5
-  var toppingsFee = 1.5
-  var basePrice = 10
+  var extraCheeseUpcharge = 1.5;
+  var thickCrustUpcharge = 2;
+  var deliveryFee = 3.5;
+  var toppingsFee = 1.5;
+  var basePrice = 10;
 
   alert("Hi, Thanks for ordering with Web to Pizza!")
   var pizza = {
@@ -13,11 +13,11 @@ function getPizzaOrder() {
     // YOUR CODE HERE
     cost: basePrice
     
-  }
+  };
 
   var crust = prompt(
     `Please enter the type of crust (${formatPrice(thickCrustUpcharge)} upcharge for Thick crust)`
-  )
+  );
   // set the pizza object's 'crust' property to the user's response
   // HINT: prompt() returns a string
   // HINT: You may wish to use .toLowerCase() and .trim()
@@ -25,12 +25,12 @@ function getPizzaOrder() {
   // to pizza.cost
   // YOUR CODE HERE
 
-  pizza.crust = crust.toLowerCase().trim()
+  pizza.crust = crust.toLowerCase().trim();
   if(pizza.crust ==='thick'){
     pizza.cost += thickCrustUpcharge
-  }
+  };
 
-  var toppings = prompt("Please enter additional toppings (comma separated)")
+  var toppings = prompt("Please enter additional toppings (comma separated)");
   // HINT: prompt() will return an empty string "" if the user presses 'OK' without entering a value
   // if the user enters toppings, use .split(",") to separate toppings into an array
   // if no toppings are given, make sure pizza.toppings is set to []
@@ -39,14 +39,14 @@ function getPizzaOrder() {
   // YOUR CODE HERE
 
   if(toppings) {
-    pizza.toppings = toppings.split(",");
+    pizza.toppings = toppings.trim().split(",");
     pizza.cost += toppingsFee*pizza.toppings.length;
   } else {
     pizza.toppings = []
   };
 
 
-  var extraCheese = confirm("Would you like extra cheese?")
+  var extraCheese = confirm("Would you like extra cheese?");
   // HINT: confirm() returns a boolean
   // if the user specifies extra cheese, set pizza.extraCheese to true or false
   // if the user specifies extra cheese, add extraCheeseUpcharge to pizza.cost
@@ -61,7 +61,7 @@ function getPizzaOrder() {
 
 
 
-  var isDelivery = confirm("Is your order for Delivery?")
+  var isDelivery = confirm("Is your order for Delivery?");
   // HINT: confirm() returns a boolean
   // if order is for delivery, set pizza.saleType to "delivery"
   // if order is NOT for delivery, set pizza.saleType to "take-out"
@@ -76,7 +76,7 @@ function getPizzaOrder() {
   };
 
   return pizza
-}
+};
 
 // This function is attached to the Order Now Button
 // This function is COMPLETE. No work to do here
