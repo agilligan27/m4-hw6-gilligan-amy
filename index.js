@@ -12,6 +12,7 @@ function getPizzaOrder() {
     // set the 'cost' property to the basePrice
     // YOUR CODE HERE
     cost: basePrice
+    
   }
 
   var crust = prompt(
@@ -36,6 +37,13 @@ function getPizzaOrder() {
   // if the user has added toppings, add toppingsFee multiplied by
   // the number of toppings added to pizza.cost
   // YOUR CODE HERE
+
+  if(toppings) {
+    pizza.toppings = toppings.split(",");
+    pizza.cost += toppingsFee*pizza.toppings.length;
+  } else {
+    pizza.toppings = []
+  };
 
 
   var extraCheese = confirm("Would you like extra cheese?")
