@@ -38,7 +38,6 @@ function getPizzaOrder() {
   // YOUR CODE HERE
 
 
-
   var extraCheese = confirm("Would you like extra cheese?")
   // HINT: confirm() returns a boolean
   // if the user specifies extra cheese, set pizza.extraCheese to true or false
@@ -60,6 +59,13 @@ function getPizzaOrder() {
   // if order is NOT for delivery, set pizza.saleType to "take-out"
   // if order if for delivery, add deliveryFee to pizza.cost
   // YOUR CODE HERE
+
+  if(isDelivery === true) {
+    pizza.saleType = "delivery";
+    pizza.cost += deliveryFee;
+  } else {
+    pizza.saleType = "take-out"
+  };
 
   return pizza
 }
