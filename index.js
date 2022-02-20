@@ -38,8 +38,8 @@ function getPizzaOrder() {
   // the number of toppings added to pizza.cost
   // YOUR CODE HERE
 
-  if(toppings) {
-    pizza.toppings = toppings.trim().split(",");
+  if(toppings.trim()) {
+    pizza.toppings = toppings.split(",");
     pizza.cost += toppingsFee*pizza.toppings.length;
   } else {
     pizza.toppings = []
